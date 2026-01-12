@@ -17,5 +17,3 @@
 - Maquetación con flex
 - Maquetación con float
 - Integración y revisión
-
-https://prod.liveshare.vsengsaas.visualstudio.com/join?1736E93E99830B6793E88A582800CCAE5030

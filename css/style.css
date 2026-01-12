@@ -1,9 +1,153 @@
 /* style.css - Estilos generales y estructura base */
 
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
 }
 
-/* Aquí irán los estilos para flex y float */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background: #2a6fa1;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 48px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.main-nav a.active,
+.main-nav a:hover {
+    background: #1b4d6b;
+}
+
+.section {
+    background: #fff;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 30px 0;
+}
+
+h1, h2, h3 {
+    color: #2a6fa1;
+    margin-top: 0;
+}
+
+/* Proyectos */
+.proyectos-flex {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.proyecto-card {
+    background: #eaf4fa;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    padding: 20px;
+    flex: 1 1 250px;
+    min-width: 220px;
+    max-width: 320px;
+}
+
+/* Galería */
+.galeria-flex {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.galeria-item {
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1 1 180px;
+    max-width: 220px;
+    text-align: center;
+}
+.galeria-item img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* Contacto */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+.contacto-form input,
+.contacto-form textarea {
+    padding: 8px;
+    border: 1px solid #b5c9d6;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.contacto-form button {
+    background: #2a6fa1;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contacto-form button:hover {
+    background: #1b4d6b;
+}
+
+footer {
+    background: #2a6fa1;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0 10px 0;
+    border-radius: 0 0 8px 8px;
+    margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+    .header-container, .proyectos-flex, .galeria-flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
 
