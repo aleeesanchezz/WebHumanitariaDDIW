@@ -133,6 +133,8 @@ h1, h2, h3 {
     flex-direction: column;
     gap: 12px;
     max-width: 400px;
+    position: relative;
+    z-index: 1;
 }
 .contacto-form input,
 .contacto-form textarea {
@@ -140,6 +142,7 @@ h1, h2, h3 {
     border: 1px solid #b5c9d6;
     border-radius: 4px;
     font-size: 1em;
+    background: rgba(255, 255, 255, 0.95);
 }
 .contacto-form button {
     background: #2a6fa1;
@@ -153,6 +156,29 @@ h1, h2, h3 {
 }
 .contacto-form button:hover {
     background: #1b4d6b;
+}
+
+/* Página de Contacto - Fondo */
+.section-contacto {
+    background-image: url('https://ayudaenaccion.org.co/uploads/2022/02/dia-mundial-.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.section-contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.50);
+    z-index: 0;
+}
+.section-contacto .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Quiénes Somos - Grupo de imágenes */
