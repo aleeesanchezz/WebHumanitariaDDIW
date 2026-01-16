@@ -65,6 +65,23 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
+/* Botón de llamada a la acción */
+.main-nav-btn {
+    display: inline-block;
+    background: #2a6fa1;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: background 0.2s, transform 0.2s;
+}
+.main-nav-btn:hover {
+    background: #1b4d6b;
+    transform: translateY(-1px);
+}
+
 /* Proyectos */
 .proyectos-flex {
     display: flex;
@@ -80,6 +97,13 @@ h1, h2, h3 {
     flex: 1 1 250px;
     min-width: 220px;
     max-width: 320px;
+}
+.proyecto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
 }
 
 /* Galería */
@@ -131,6 +155,73 @@ h1, h2, h3 {
     background: #1b4d6b;
 }
 
+/* Quiénes Somos - Grupo de imágenes */
+.grupo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+.grupo-imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+.grupo-imagenes img {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s, object-fit 0.3s, background 0.3s;
+    background: #fff;
+    cursor: pointer;
+}
+.grupo-imagenes img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    object-fit: contain;
+    background: #f0f0f0;
+    z-index: 10;
+    position: relative;
+}
+
+/* Valores con imágenes */
+.valores-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+}
+.valor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.valor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.valor-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.valor-item p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2a6fa1;
+    margin: 0;
+}
+
 footer {
     background: #2a6fa1;
     color: #fff;
@@ -148,6 +239,34 @@ footer {
     .main-nav ul {
         flex-direction: column;
         gap: 8px;
+    }
+    .valores-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .valor-item {
+        padding: 15px;
+    }
+    .valor-item img {
+        width: 60px;
+        height: 60px;
+    }
+    .grupo h2 {
+        font-size: 1.5em;
+    }
+    .grupo-imagenes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .grupo-imagenes img {
+        max-width: 100%;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .valores-container {
+        grid-template-columns: 1fr;
     }
 }
 
