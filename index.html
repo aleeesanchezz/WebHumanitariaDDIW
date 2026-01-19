@@ -7,33 +7,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header principal -->
-    <header id="main-header">
-        <div class="container header-container">
-            <div class="logo">
-                <!-- Logo aquí -->
-                <img src="img/logo.png" alt="Logo Humanitaria" />
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+    <div class="header-topbar">
+        <div class="logo">
+            <img src="assets/logo/logotipo-rosa.svg" alt="Logo Humanitaria" />
         </div>
-    </header>
-
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <link rel="stylesheet" href="css/style.css">
     <!-- Sección de inicio / portada -->
-    <section id="inicio" class="section">
-        <div class="container">
-            <h1>Ayuda Humanitaria en España</h1>
-            <p>Bienvenidos a nuestra web dedicada a causas humanitarias. Juntos podemos ayudar a quienes más lo necesitan.</p>
-            <a href="quienes-somos.html" class="main-nav-btn">Conoce más sobre nosotros</a>
-        </div>
-    </section>
+        <section id="inicio" class="hero-ong">
+            <div class="hero-ong-flex">
+                <!-- Logo eliminado -->
+                <div class="hero-ong-content-col">
+                    <h1 class="hero-ong-title">CAMBIAMOS VIDAS<br>CON SOLIDARIDAD</h1>
+                    <p class="hero-ong-subtext">Unimos fuerzas para que la ayuda llegue a quienes más lo necesitan.</p>
+                    <a href="quienes-somos.html" class="main-nav-btn hero-btn"><span class="hero-btn-text">Conoce más sobre nosotros</span></a>
+                </div>
+            </div>
+        </section>
 
     <!-- Barra lateral (opcional, para noticias, enlaces, etc.) -->
     <aside id="sidebar">

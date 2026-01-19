@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/galeria.css">
     <title>Galería - Web Humanitaria</title>
 </head>
 <body>
-    <!-- Header principal -->
-    <header id="main-header">
-        <div class="container header-container">
-            <div class="logo">
-                <!-- Logo aquí -->
-                <img src="img/logo.png" alt="Logo Humanitaria" />
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="galeria.html" class="active">Galería</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+    <div class="header-topbar">
+        <div class="logo">
+            <img src="assets/logo/logotipo-rosa.svg" alt="Logo Humanitaria" />
         </div>
-    </header>
-
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="galeria.html" class="active">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <link rel="stylesheet" href="css/style.css">
     <section>
         <h1>Galería de imágenes</h1>
         <p>Los valores humanitarios europeos en acción</p>
@@ -58,7 +53,16 @@
         La ayuda se canaliza a través de más de 200 organizaciones y agencias asociadas internacionales y locales.</p>
     </section>
 
-    <!-- Pie de página -->
+    <aside id="sidebar">
+        <div class="container">
+            <h3>Noticias y Enlaces</h3>
+            <ul>
+                <li><a href="https://ayudaenaccion.org/sostenibilidad/">Noticia 1</a></li>
+                <li><a href="https://cooperaongd.eu/proyectos-en-espana">Noticia 2</a></li>
+                <!-- Más enlaces o noticias -->
+            </ul>
+        </div>
+    </aside>
     <footer id="main-footer">
         <div class="container">
             <p>&copy; 2026 Humanitaria España. Todos los derechos reservados.</p>
