@@ -27,21 +27,71 @@
             <h1>Contáctanos</h1>
             <p>¿Tienes dudas o quieres colaborar? Envíanos tu mensaje y te responderemos lo antes posible.</p>
 
-            <form class="contacto-form" action="#" method="post" novalidate>
-                <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+            <div class="contact-wrapper">
+                <!-- Información de contacto -->
+                <aside class="contact-info">
+                    <div class="info-box">
+                        <h3>📍 Ubicación</h3>
+                        <p>España</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:kairos@humanitaria.es">kairos@humanitaria.es</a></p>
+                    </div>
+                    <div class="info-box">
+                        <h3>📱 Teléfono</h3>
+                        <p><a href="tel:+34900123456">+34 900 123 456</a></p>
+                    </div>
+                    <div class="info-box">
+                        <h3>🕐 Horario</h3>
+                        <p>Lunes a viernes: 9:00 - 18:00</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Sábados y domingos: Cerrado</p>
+                    </div>
+                </aside>
 
-                <label for="apellidos">Apellidos</label>
-                <input id="apellidos" name="apellidos" type="text" placeholder="Tus apellidos">
+                <!-- Formulario de contacto -->
+                <form class="contacto-form" action="#" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+                    </div>
 
-                <label for="email">Correo electrónico</label>
-                <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input id="telefono" name="telefono" type="tel" placeholder="+34 900 123 456">
+                        </div>
+                    </div>
 
-                <label for="nota">Mensaje</label>
-                <textarea id="nota" name="nota" placeholder="Cuéntanos cómo quieres ayudar" rows="5" required></textarea>
+                    <div class="form-group">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona un asunto...</option>
+                            <option value="consulta">Consulta general</option>
+                            <option value="colaboracion">Solicitud de colaboración</option>
+                            <option value="voluntariado">Voluntariado</option>
+                            <option value="donacion">Donaciones</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
 
-                <button type="submit">Enviar</button>
-            </form>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte o cómo quieres colaborar con nosotros..." rows="6" required></textarea>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <label for="privacidad">He leído y acepto la <a href="#">política de privacidad</a> *</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar mensaje</button>
+                </form>
+            </div>
         </div>
     </main>
 
