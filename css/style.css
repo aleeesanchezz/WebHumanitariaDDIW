@@ -1,4 +1,5 @@
 
+
 /* ===== QUIENES SOMOS - TEXTO PRINCIPAL EN TARJETA BLANCA ===== */
 .section .container > p {
   background: #fff;
@@ -395,6 +396,10 @@ body {
 .main-nav a:hover::after {
   transform: scaleX(1);
 }
+
+
+
+
 /* HERO FLEX NUEVO */
 /* Ajuste de sección hero centrada y más pequeña */
 .hero-ong-container {
@@ -606,5 +611,44 @@ body {
   .hero-ong-phrase {
     font-size: 1.2em;
   }
+}
+
+/* ===== TARJETAS DE NOTICIAS - ANIMACIONES MODERNAS ===== */
+.news-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.news-btn-primary {
+  box-shadow: 0 4px 12px 0 rgba(224,47,142,0.3);
+}
+
+.news-btn-primary:hover {
+  background: #c61c7d !important;
+  box-shadow: 0 8px 20px 0 rgba(224,47,142,0.5);
+  transform: translateY(-2px);
+}
+
+.news-btn-secondary {
+  background: rgba(224, 47, 142, 0.6) !important;
+  backdrop-filter: blur(5px);
+}
+
+.news-btn-secondary:hover {
+  background: #e02f8e !important;
+  box-shadow: 0 8px 20px 0 rgba(224,47,142,0.5);
+  transform: translateY(-2px);
+  border-color: #e02f8e !important;
+  color: #fff !important;
 }
 
