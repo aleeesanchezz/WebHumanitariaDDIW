@@ -11,49 +11,81 @@
         <div class="logo">
             <img src="assets/logo/logotipo-rosa.svg" alt="Logo Humanitaria" />
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="galeria.html">Galería</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="nav-card">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
     <!-- Sección de inicio / portada -->
         <section id="inicio" class="hero-ong">
             <div class="hero-ong-flex">
                 <div class="hero-ong-content-col">
-                    <h1 class="hero-ong-title">CAMBIAMOS VIDAS<br>CON SOLIDARIDAD</h1>
+                    <h1 class="hero-ong-title">CAMBIAMOS VIDAS CON SOLIDARIDAD</h1>
                     <p class="hero-ong-subtext">Unimos fuerzas para que la ayuda llegue a quienes más lo necesitan.</p>
                     <a href="quienes-somos.html" class="main-nav-btn hero-btn"><span class="hero-btn-text">Conoce más sobre nosotros</span></a>
                 </div>
             </div>
         </section>
 
-    <!-- Barra lateral (opcional, para noticias, enlaces, etc.) -->
-    <div id="carouselExample" class="carousel slide" style="margin: 30px auto; width: 60%; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(224, 47, 142, 0.2);">
-        <div class="carousel-inner" >    
-            <div class="carousel-item active">
-                <img src="recursos/img/carousel/carousel1.jpg" class="d-block w-100" alt="carousel1" height="500px">
+
+
+    <!-- Sección de Noticias Humanitarias -->
+    <div style="max-width: 1100px; margin: 64px auto 0; padding: 0 20px;">
+        <h2 style="font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; color: #e02f8e; font-size: 2.2em; font-weight: 900; margin-bottom: 48px; text-align: center; border-bottom: 3px solid #e02f8e; padding-bottom: 16px; letter-spacing: -1px; text-transform: uppercase;">Noticias de Proyectos Humanitarios</h2>
+        <div class="row g-4" style="margin-bottom: 56px;">
+            <!-- Noticia 1 -->
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel1.jpg" alt="Ayuda de Emergencia" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Ayuda de Emergencia en Zonas Afectadas</h5>
+                        <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Nuestro equipo de respuesta rápida ha llegado a las zonas más críticos para distribuir alimentos, agua potable y medicinas esenciales a las familias más vulnerables.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="proyectos.html" class="btn btn-sm news-btn-primary" style="background: #e02f8e; color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Más información</a>
+                            <a href="contacto.html" class="btn btn-sm news-btn-secondary" style="background: rgba(224, 47, 142, 0.6); color: #fff; border: 1px solid #e02f8e; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Donar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="recursos/img/carousel/carousel2.jpg" class="d-block w-100" alt="carousel2" height="500px">
+            <!-- Noticia 2 -->
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel2.jpg" alt="Educación para Todos" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Educación para Todos los Niños</h5>
+                        <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Estamos construyendo escuelas en comunidades remotas y proporcionando becas educativas para que ningún niño se quede sin oportunidades de aprendizaje.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="proyectos.html" class="btn btn-sm news-btn-primary" style="background: #e02f8e; color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Más información</a>
+                            <a href="contacto.html" class="btn btn-sm news-btn-secondary" style="background: rgba(224, 47, 142, 0.6); color: #fff; border: 1px solid #e02f8e; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Donar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="recursos/img/carousel/carousel3.jpg" class="d-block w-100" alt="carousel3" height="500px">
+            <!-- Noticia 3 -->
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel3.jpg" alt="Salud y Bienestar" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Salud y Bienestar Integral</h5>
+                        <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Llevamos atención médica, programas de prevención y campañas de vacunación a las poblaciones más necesitadas para garantizar su derecho a la salud.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="proyectos.html" class="btn btn-sm news-btn-primary" style="background: #e02f8e; color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Más información</a>
+                            <a href="contacto.html" class="btn btn-sm news-btn-secondary" style="background: rgba(224, 47, 142, 0.6); color: #fff; border: 1px solid #e02f8e; border-radius: 8px; padding: 8px 16px; font-family: 'Satoshi-Bold', Arial, sans-serif; text-decoration: none; transition: all 0.3s ease; font-weight: 600;">Donar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-    <aside id="sidebar">
-        
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        </div>
+    </div>
+            </div>
+        </div>
     </div>
 
     <!-- Pie de página -->
