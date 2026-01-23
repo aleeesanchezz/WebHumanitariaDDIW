@@ -5,30 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Humanitarias</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="header-topbar">
         <div class="logo">
             <img src="assets/logo/logotipo-rosa.svg" alt="Logo Humanitaria" />
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="galeria.html">Galería</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="nav-card">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <link rel="stylesheet" href="css/style.css">
     <!-- Sección de inicio / portada -->
         <section id="inicio" class="hero-ong">
             <div class="hero-ong-flex">
-                <!-- Logo eliminado -->
                 <div class="hero-ong-content-col">
-                    <h1 class="hero-ong-title">CAMBIAMOS VIDAS<br>CON SOLIDARIDAD</h1>
+                    <h1 class="hero-ong-title">CAMBIAMOS VIDAS CON SOLIDARIDAD</h1>
                     <p class="hero-ong-subtext">Unimos fuerzas para que la ayuda llegue a quienes más lo necesitan.</p>
                     <a href="quienes-somos.html" class="main-nav-btn hero-btn"><span class="hero-btn-text">Conoce más sobre nosotros</span></a>
                 </div>
@@ -42,10 +41,10 @@
         <h2 style="font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; color: #e02f8e; font-size: 2.2em; font-weight: 900; margin-bottom: 48px; text-align: center; border-bottom: 3px solid #e02f8e; padding-bottom: 16px; letter-spacing: -1px; text-transform: uppercase;">Noticias de Proyectos Humanitarios</h2>
         <div class="row g-4" style="margin-bottom: 56px;">
             <!-- Noticia 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 news-card" style="background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 12px 48px 0 rgba(224,47,142,0.35)'; this.style.borderColor='rgba(224, 47, 142, 0.8)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 18px 0 rgba(0,0,0,0.30)'; this.style.borderColor='rgba(224, 47, 142, 0.3)';">
-                    <img src="img/carousel1.jpg" class="card-img-top" alt="Ayuda de Emergencia" style="height: 200px; object-fit: cover; filter: brightness(0.9);">
-                    <div class="card-body" style="padding: 24px;">
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel1.jpg" alt="Ayuda de Emergencia" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
                         <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Ayuda de Emergencia en Zonas Afectadas</h5>
                         <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Nuestro equipo de respuesta rápida ha llegado a las zonas más críticos para distribuir alimentos, agua potable y medicinas esenciales a las familias más vulnerables.</p>
                         <div style="display: flex; gap: 10px;">
@@ -56,10 +55,10 @@
                 </div>
             </div>
             <!-- Noticia 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 news-card" style="background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 12px 48px 0 rgba(224,47,142,0.35)'; this.style.borderColor='rgba(224, 47, 142, 0.8)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 18px 0 rgba(0,0,0,0.30)'; this.style.borderColor='rgba(224, 47, 142, 0.3)';">
-                    <img src="img/carousel2.jpg" class="card-img-top" alt="Educación para Todos" style="height: 200px; object-fit: cover; filter: brightness(0.9);">
-                    <div class="card-body" style="padding: 24px;">
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel2.jpg" alt="Educación para Todos" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
                         <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Educación para Todos los Niños</h5>
                         <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Estamos construyendo escuelas en comunidades remotas y proporcionando becas educativas para que ningún niño se quede sin oportunidades de aprendizaje.</p>
                         <div style="display: flex; gap: 10px;">
@@ -70,10 +69,10 @@
                 </div>
             </div>
             <!-- Noticia 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 news-card" style="background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-12px) scale(1.02)'; this.style.boxShadow='0 12px 48px 0 rgba(224,47,142,0.35)'; this.style.borderColor='rgba(224, 47, 142, 0.8)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 18px 0 rgba(0,0,0,0.30)'; this.style.borderColor='rgba(224, 47, 142, 0.3)';">
-                    <img src="img/carousel3.jpg" class="card-img-top" alt="Salud y Bienestar" style="height: 200px; object-fit: cover; filter: brightness(0.9);">
-                    <div class="card-body" style="padding: 24px;">
+            <div class="col-12">
+                <div class="card news-card news-horizontal" style="display: flex; flex-direction: row; align-items: stretch; background: rgba(45, 45, 48, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(224, 47, 142, 0.3); border-radius: 16px; box-shadow: 0 4px 18px 0 rgba(0,0,0,0.30); overflow: hidden; margin-bottom: 32px;">
+                    <img src="recursos/img/carousel/carousel3.jpg" alt="Salud y Bienestar" class="news-img-horizontal" style="width: 260px; min-width: 180px; max-width: 320px; object-fit: cover; filter: brightness(0.9); border-radius: 0;">
+                    <div class="card-body" style="padding: 32px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center;">
                         <h5 class="card-title" style="color: #e02f8e; font-family: 'Chillax', 'Satoshi-Black', 'Arial Black', Arial, sans-serif; font-size: 1.5em; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px;">Salud y Bienestar Integral</h5>
                         <p class="card-text" style="color: #d0d0d0; font-family: 'Satoshi-Regular', Arial, sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 16px;">Llevamos atención médica, programas de prevención y campañas de vacunación a las poblaciones más necesitadas para garantizar su derecho a la salud.</p>
                         <div style="display: flex; gap: 10px;">
