@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Completa - Web Kairós</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* PORTADA */
+        .portada {
+            background: linear-gradient(135deg, #002771 0%, #1e4f75 100%);
+            color: white;
+            padding: 120px 40px;
+            text-align: center;
+            page-break-after: always;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portada .logo-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #E02F8E, #FFDE59);
+            border-radius: 20px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .portada h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .portada p {
+            font-size: 24px;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .portada .subtitulo {
+            font-size: 16px;
+            margin-top: 40px;
+            opacity: 0.8;
+            border-top: 2px solid rgba(255,255,255,0.3);
+            padding-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portada .fecha {
+            margin-top: 60px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* TABLA DE CONTENIDOS */
+        .toc {
+            padding: 80px 60px;
+            page-break-after: always;
+            background: white;
+        }
+
+        .toc h2 {
+            color: #002771;
+            font-size: 36px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #E02F8E;
+            padding-bottom: 15px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        .toc li {
+            counter-increment: item;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .toc li:before {
+            content: counter(item) ". ";
+            color: #E02F8E;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .toc a {
+            color: #002771;
+            text-decoration: none;
+            border-bottom: 1px dotted #E02F8E;
+        }
+
+        .toc a:hover {
+            color: #E02F8E;
+        }
+
+        .toc .subseccion {
+            margin-left: 30px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* CONTENIDO GENERAL */
+        .contenido {
+            padding: 60px;
+        }
+
+        .seccion {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        .seccion h2 {
+            color: #002771;
+            font-size: 32px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #E02F8E;
+            margin-top: 40px;
+        }
+
+        .seccion h3 {
+            color: #E02F8E;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seccion h4 {
+            color: #002771;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .seccion p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #444;
+        }
+
+        .seccion ul, .seccion ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seccion li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* CAJA DE COLOR */
+        .color-box {
+            display: inline-block;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 10px 10px 10px 0;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .color-magenta {
+            background: #E02F8E;
+        }
+
+        .color-azul {
+            background: #002771;
+        }
+
+        .color-amarillo {
+            background: #FFDE59;
+            color: #002771;
+        }
+
+        /* TABLA */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        table th {
+            background: #002771;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* CAJA DE CÓDIGO */
+        pre {
+            background: #f4f4f4;
+            border-left: 4px solid #E02F8E;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        /* RECUADRO */
+        .recuadro {
+            background: #f0f8ff;
+            border-left: 4px solid #002771;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .recuadro.destacado {
+            background: #fff3e0;
+            border-left-color: #E02F8E;
+        }
+
+        .recuadro.exito {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+
+        .recuadro.alerta {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        /* GALERÍA DE COLORES */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .color-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+
+        .color-item .swatch {
+            width: 100%;
+            height: 100px;
+        }
+
+        .color-item .info {
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        .color-item .nombre {
+            font-weight: bold;
+            color: #002771;
+            margin-bottom: 8px;
+        }
+
+        .color-item .codigo {
+            font-family: monospace;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .color-item .significado {
+            font-size: 11px;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* PIE DE PÁGINA */
+        .pie-pagina {
+            background: #002771;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            page-break-before: avoid;
+        }
+
+        .pie-pagina p {
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        /* SALTO DE PÁGINA */
+        .salto-pagina {
+            page-break-after: always;
+        }
+
+        /* ESTILOS ESPECIALES */
+        .highlight {
+            background: #FFDE59;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #002771;
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #E02F8E;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .badge.azul {
+            background: #002771;
+        }
+
+        .badge.amarillo {
+            background: #FFDE59;
+            color: #002771;
+        }
+
+        /* LISTA DE VERIFICACIÓN */
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #E02F8E;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PORTADA -->
+        <div class="portada">
+            <div class="logo-placeholder">K</div>
+            <h1>KAIRÓS</h1>
+            <p>Web ONG Humanitaria</p>
+            <div class="subtitulo">
+                <p>Documentación Completa del Proyecto</p>
+                <p style="font-size: 14px; margin-top: 15px;">Incluyendo Guía de Estilos Oficial, Estructura Técnica y Especificaciones de Diseño</p>
+            </div>
+            <div class="fecha">
+                <p>Enero 2026</p>
+                <p>Lidia Fernando Alejandro Santiago Marcos</p>
+            </div>
+        </div>
+
+        <!-- TABLA DE CONTENIDOS -->
+        <div class="toc">
+            <h2>Tabla de Contenidos</h2>
+            <ol>
+                <li>Introducción y Contexto
+                    <div class="subseccion">• Sobre Kairós • Misión y Objetivos • Concepto de "Tiempo Oportuno"</div>
+                </li>
+                <li>Identidad Visual y Branding
+                    <div class="subseccion">• Logo y Logotipo • Significado Visual • Variantes</div>
+                </li>
+                <li>Paleta de Colores Oficial
+                    <div class="subseccion">• Color Rosa Magenta • Color Azul Oscuro • Color Amarillo • Combinaciones</div>
+                </li>
+                <li>Tipografía y Jerarquía Visual
+                    <div class="subseccion">• Chillax para Logotipo • Satoshi para Textos • Jerarquía Tipográfica • Aplicación de Colores</div>
+                </li>
+                <li>Elementos Visuales y Diseño
+                    <div class="subseccion">• Formas Abstractas • Iconografía • Fotografía • Estilos Decorativos</div>
+                </li>
+                <li>Estructura Técnica del Proyecto
+                    <div class="subseccion">• Archivos HTML • Hojas de Estilo • Estructura de Carpetas • Assets</div>
+                </li>
+                <li>Páginas y Funcionalidades
+                    <div class="subseccion">• Página de Inicio • Quiénes Somos • Proyectos • Galería • Contacto</div>
+                </li>
+                <li>Guía de Implementación
+                    <div class="subseccion">• Instalación • Configuración • Responsive Design • Testing</div>
+                </li>
+                <li>Guía de Mantenimiento
+                    <div class="subseccion">• Actualización de Contenido • Cambios de Estilo • Optimización • SEO</div>
+                </li>
+                <li>Roles del Equipo y Metodología
+                    <div class="subseccion">• Coordinador • Diseñador • Desarrollador • Investigador • QA</div>
+                </li>
+                <li>Roadmap y Mejoras Futuras
+                    <div class="subseccion">• Fase 1: Optimización • Fase 2: Funcionalidad • Fase 3: Avanzada</div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="contenido">
+
+            <!-- SECCIÓN 1: INTRODUCCIÓN -->
+            <div class="seccion">
+                <h2>1. Introducción y Contexto</h2>
+
+                <h3>Sobre Kairós</h3>
+                <p>Kairós es una <span class="highlight">Organización No Gubernamental (ONG)</span> dedicada a proporcionar ayuda en distintas causas comunitarias tales como:</p>
+                <ul>
+                    <li>Ayuda a niños en riesgo de exclusión social</li>
+                    <li>Distribución de alimentos y apoyo alimentario</li>
+                    <li>Asistencia integral a refugiados y migrantes</li>
+                    <li>Programas educativos y de integración</li>
+                    <li>Asistencia sanitaria y apoyo psicosocial</li>
+                </ul>
+
+                <h3>El Significado de Kairós</h3>
+                <p><strong>Kairós (καιρός)</strong> es un término del idioma griego antiguo que significa <span class="highlight">"tiempo oportuno"</span> o <span class="highlight">"el momento preciso"</span>. A diferencia de "Chronos" (χρόνος), que se refiere al tiempo cronológico, Kairós representa el instante perfecto, el momento adecuado para actuar.</p>
+
+                <div class="recuadro destacado">
+                    <strong>Concepto clave:</strong> Kairós refleja la filosofía fundamental de la organización: llegar en el momento preciso cuando la ayuda es más necesaria, con la acción correcta en el tiempo correcto.
+                </div>
+
+                <h3>Misión y Objetivos del Proyecto Web</h3>
+                <p>El sitio web de Kairós tiene como propósito:</p>
+                <ul>
+                    <li><strong>Informar:</strong> Comunicar la labor humanitaria de la organización</li>
+                    <li><strong>Visibilizar:</strong> Mostrar proyectos activos y sus impactos reales</li>
+                    <li><strong>Conectar:</strong> Facilitar el contacto con personas interesadas en colaborar</li>
+                    <li><strong>Concienciar:</strong> Crear conciencia sobre necesidades humanitarias en España</li>
+                    <li><strong>Inspirar:</strong> Promover la participación ciudadana y voluntariado</li>
+                    <li><strong>Transmitir valores:</strong> Comunicar humanidad, compromiso y esperanza</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 2: IDENTIDAD VISUAL -->
+            <div class="seccion">
+                <h2>2. Identidad Visual y Branding</h2>
+
+                <h3>El Logo de Kairós</h3>
+                <p>El logo de Kairós es una composición geométrica que representa dos elementos fundamentales:</p>
+                <ul>
+                    <li><strong>La letra K:</strong> Inicial del nombre de la organización</li>
+                    <li><strong>Un reloj de arena abstracto:</strong> Simboliza el tiempo, la urgencia humanitaria y el momento oportuno</li>
+                </ul>
+
+                <div class="recuadro">
+                    <p><strong>Simbolismo visual:</strong> El reloj de arena representa cómo el tiempo es limitado para las personas en necesidad, y Kairós actúa precisamente cuando más se necesita. Las formas en espejo de la K crean un efecto visual de simetría y equilibrio.</p>
+                </div>
+
+                <h3>Variantes del Logo</h3>
+                <p>El logo de Kairós se presenta en tres variantes de color, cada una con un propósito específico:</p>
+
+                <h4>Variante Rosa Magenta (#E02F8E)</h4>
+                <p>Uso: Contextos emocionales y cercanos • Fondos claros • Elementos destacados • Humanidad</p>
+
+                <h4>Variante Azul Oscuro (#002771)</h4>
+                <p>Uso: Contextos institucionales • Fondos claros y oscuros • Logos principales • Confianza</p>
+
+                <h4>Variante Amarillo (#FFDE59)</h4>
+                <p>Uso: Contextos optimistas • Fondos oscuros • Elementos de esperanza • Destaque</p>
+
+                <h3>Normas de Uso del Logo</h3>
+                <div class="recuadro exito">
+                    <strong>✓ CORRECTO:</strong>
+                    <ul>
+                        <li>Mantener proporciones originales</li>
+                        <li>Dejar espacio de respiro mínimo alrededor</li>
+                        <li>Usar colores oficiales exactos</li>
+                        <li>Aplicar en fondos que proporcionen contraste</li>
+                    </ul>
+                </div>
+
+                <div class="recuadro alerta">
+                    <strong>✗ INCORRECTO:</strong>
+                    <ul>
+                        <li>Distorsionar las proporciones</li>
+                        <li>Rotar o invertir el logo</li>
+                        <li>Modificar colores sin autorización</li>
+                        <li>Añadir efectos no autorizados</li>
+                        <li>Usar versiones de baja resolución</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 3: PALETA DE COLORES -->
+            <div class="seccion">
+                <h2>3. Paleta de Colores Oficial</h2>
+
+                <p>La identidad visual de Kairós se fundamenta en una paleta de <strong>tres colores principales</strong>, seleccionados estratégicamente para representar los valores fundamentales de la organización.</p>
+
+                <h3>Color 1: Rosa Magenta - HUMANIDAD</h3>
+
+                <div style="background: #E02F8E; padding: 30px; border-radius: 8px; color: white; margin: 20px 0; text-align: center;">
+                    <p style="font-size: 24px; margin: 0;">█ HEX: #E02F8E</p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Código</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>HEX</td>
+                        <td>#E02F8E</td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>224, 47, 142</td>
+                    </tr>
+                    <tr>
+                        <td>CMYK</td>
+                        <td>0%, 79%, 37%, 12%</td>
+                    </tr>
+                </table>
+
+                <h4>Valores que representa:</h4>
+                <ul>
+                    <li> <strong>Humanidad:</strong> El trato cercano, empático y solidario</li>
+                    <li> <strong>Cercanía:</strong> La proximidad y conexión con las personas ayudadas</li>
+                    <li> <strong>Dignidad:</strong> El respeto integral por cada individuo</li>
+                </ul>
+
+                <h4>Aplicaciones del Rosa:</h4>
+                <ul>
+                    <li>Botones de llamada a la acción principales</li>
+                    <li>Enlaces y elementos interactivos destacados</li>
+                    <li>Elementos emocionales y testimonios</li>
+                    <li>Iconos relacionados con personas</li>
+                    <li>Textos destacados o citas importantes</li>
+                </ul>
+
+                <h3>Color 2: Azul Oscuro - COMPROMISO</h3>
+
+                <div style="background: #002771; padding: 30px; border-radius: 8px; color: white; margin: 20px 0; text-align: center;">
+                    <p style="font-size: 24px; margin: 0;">█ HEX: #002771</p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Código</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>HEX</td>
+                        <td>#002771</td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>0, 39, 113</td>
+                    </tr>
+                    <tr>
+                        <td>CMYK</td>
+                        <td>100%, 65%, 0%, 56%</td>
+                    </tr>
+                </table>
+
+                <h4>Valores que representa:</h4>
+                <ul>
+                    <li> <strong>Compromiso:</strong> La dedicación constante e inquebrantable</li>
+                    <li> <strong>Confianza:</strong> Seriedad institucional y fiabilidad</li>
+                    <li> <strong>Responsabilidad:</strong> El cumplimiento riguroso de objetivos</li>
+                </ul>
+
+                <h4>Aplicaciones del Azul:</h4>
+                <ul>
+                    <li>Headers y footers principales</li>
+                    <li>Fondos corporativos e institucionales</li>
+                    <li>Títulos y textos de importancia</li>
+                    <li>Elementos de navegación</li>
+                    <li>Fondos de secciones principales</li>
+                </ul>
+
+                <h3>Color 3: Amarillo - ESPERANZA</h3>
+
+                <div style="background: #FFDE59; padding: 30px; border-radius: 8px; color: #002771; margin: 20px 0; text-align: center;">
+                    <p style="font-size: 24px; margin: 0;">█ HEX: #FFDE59</p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Código</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>HEX</td>
+                        <td>#FFDE59</td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>255, 222, 89</td>
+                    </tr>
+                    <tr>
+                        <td>CMYK</td>
+                        <td>0%, 13%, 65%, 0%</td>
+                    </tr>
+                </table>
+
+                <h4>Valores que representa:</h4>
+                <ul>
+                    <li> <strong>Esperanza:</strong> Un futuro positivo y posible</li>
+                    <li> <strong>Oportunidad:</strong> Las posibilidades reales de cambio</li>
+                    <li> <strong>Futuro:</strong> La proyección hacia adelante y mejora</li>
+                </ul>
+
+                <h4>Aplicaciones del Amarillo:</h4>
+                <ul>
+                    <li>Elementos de soporte visual y énfasis</li>
+                    <li>Highlights y resaltados en textos</li>
+                    <li>Fondos de secciones optimistas</li>
+                    <li>Elementos decorativos y acentos</li>
+                    <li>Indicadores de éxito o progreso</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 4: TIPOGRAFÍA -->
+            <div class="seccion">
+                <h2>4. Tipografía y Jerarquía Visual</h2>
+
+                <h3>Familia Tipográfica 1: Chillax (Logotipo)</h3>
+
+                <p><strong>Propósito:</strong> Exclusivamente para el logotipo de Kairós</p>
+
+                <div class="recuadro">
+                    <strong>Características:</strong>
+                    <ul>
+                        <li>Moderna y distintiva</li>
+                        <li>Alta legibilidad incluso a tamaños pequeños</li>
+                        <li>Personalidad fuerte y memorable</li>
+                        <li>Diferenciación visual clara</li>
+                    </ul>
+                </div>
+
+                <p><strong>Importante:</strong> La tipografía Chillax NO debe usarse en textos de contenido. Su uso está reservado únicamente para la identidad del logotipo.</p>
+
+                <h3>Familia Tipográfica 2: Shatoshi (Satoshi) - Textos</h3>
+
+                <p><strong>Propósito:</strong> Todo el contenido y textos del sitio web</p>
+
+                <div class="recuadro exito">
+                    <strong>Características:</strong>
+                    <ul>
+                        <li>Excelente legibilidad en pantalla</li>
+                        <li>Moderna sin decoraciones (sans-serif)</li>
+                        <li>Amplia gama de pesos disponibles</li>
+                        <li>Versiones italic para énfasis</li>
+                    </ul>
+                </div>
+
+                <h4>Pesos Disponibles de Satoshi:</h4>
+                <table>
+                    <tr>
+                        <th>Peso</th>
+                        <th>Valor</th>
+                        <th>Aplicación</th>
+                    </tr>
+                    <tr>
+                        <td>Light</td>
+                        <td>300</td>
+                        <td>Textos secundarios, subtítulos</td>
+                    </tr>
+                    <tr>
+                        <td>Regular</td>
+                        <td>400</td>
+                        <td>Texto de cuerpo principal</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>500</td>
+                        <td>Texto destacado, subtítulos</td>
+                    </tr>
+                    <tr>
+                        <td>Bold</td>
+                        <td>700</td>
+                        <td>Títulos y énfasis</td>
+                    </tr>
+                    <tr>
+                        <td>Black</td>
+                        <td>900</td>
+                        <td>Títulos principales, logos</td>
+                    </tr>
+                </table>
+
+                <h3>Jerarquía Tipográfica</h3>
+
+                <h4>Nivel 1 - H1 (Título Principal)</h4>
+                <pre>font-family: 'Satoshi-Bold'
+font-size: 48px (3em)
+font-weight: 700
+line-height: 1.2
+letter-spacing: 3px
+text-transform: uppercase
+color: #002771</pre>
+                <p><strong>Ejemplo de H1:</strong> <span style="font-size: 28px; color: #002771; font-weight: bold;">BIENVENIDOS A KAIRÓS</span></p>
+
+                <h4>Nivel 2 - H2 (Título Secundario)</h4>
+                <pre>font-family: 'Satoshi-Bold'
+font-size: 32px (2em)
+font-weight: 600
+line-height: 1.3
+color: #002771</pre>
+
+                <h4>Nivel 3 - H3 (Subtítulo)</h4>
+                <pre>font-family: 'Satoshi-Medium'
+font-size: 24px (1.5em)
+font-weight: 500
+line-height: 1.4
+color: #E02F8E (alternativa: #002771)</pre>
+
+                <h4>Texto de Cuerpo (Párrafo)</h4>
+                <pre>font-family: 'Satoshi-Regular'
+font-size: 16px (1em)
+font-weight: 400
+line-height: 1.8
+color: #333333</pre>
+
+                <h3>Aplicación de Colores en Tipografía</h3>
+
+                <h4>Sobre Fondos Claros</h4>
+                <ul>
+                    <li><strong>Títulos:</strong> #002771 (Azul) o #E02F8E (Magenta)</li>
+                    <li><strong>Texto regular:</strong> #222222 (Negro)</li>
+                    <li><strong>Texto secundario:</strong> #666666 (Gris)</li>
+                </ul>
+
+                <h4>Sobre Fondos Oscuros</h4>
+                <ul>
+                    <li><strong>Títulos:</strong> #FFFFFF (Blanco) o #FFDE59 (Amarillo)</li>
+                    <li><strong>Texto regular:</strong> #FFFFFF (Blanco)</li>
+                    <li><strong>Texto secundario:</strong> #E5E5E5 (Gris claro)</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 5: ELEMENTOS VISUALES -->
+            <div class="seccion">
+                <h2>5. Elementos Visuales y Diseño</h2>
+
+                <h3>Formas Abstractas Decorativas</h3>
+
+                <p>El diseño de Kairós incorpora <strong>formas geométricas abstractas</strong> (asteriscos/cruces +) como elementos decorativos que se distribuyen en fondos y secciones.</p>
+
+                <h4>Características de las Formas:</h4>
+                <ul>
+                    <li><strong>Forma base:</strong> Asterisco o cruz (+)</li>
+                    <li><strong>Tamaños:</strong> Variados (desde 20px hasta 150px)</li>
+                    <li><strong>Distribución:</strong> Orgánica, no en cuadrícula rígida</li>
+                    <li><strong>Opacidad:</strong> Variable (50% a 100%)</li>
+                    <li><strong>Rotación:</strong> Libre, sin restricciones</li>
+                </ul>
+
+                <h4>Colores de Formas Decorativas:</h4>
+                <div style="display: flex; gap: 20px; margin: 20px 0;">
+                    <div class="color-box color-magenta">
+                        #E02F8E
+                        <br><small>Humanidad</small>
+                    </div>
+                    <div class="color-box color-azul">
+                        #002771
+                        <br><small>Compromiso</small>
+                    </div>
+                    <div class="color-box color-amarillo">
+                        #FFDE59
+                        <br><small>Esperanza</small>
+                    </div>
+                </div>
+
+                <h4>Significado de Formas Abstractas:</h4>
+                <ul>
+                    <li> Diversidad de causas y proyectos</li>
+                    <li> Multiplicidad de personas ayudadas</li>
+                    <li> Conexiones y red de apoyo comunitario</li>
+                    <li> Dinamismo y energía de la organización</li>
+                    <li> Multiplicidad de objetivos y enfoques</li>
+                </ul>
+
+                <h3>Iconografía</h3>
+
+                <h4>Estilo de Iconos:</h4>
+                <ul>
+                    <li><strong>Tipo:</strong> Line icons (iconos de línea)</li>
+                    <li><strong>Trazo:</strong> 2-3px de grosor</li>
+                    <li><strong>Esquinas:</strong> Redondeadas</li>
+                    <li><strong>Estilo:</strong> Minimalista y limpio</li>
+                </ul>
+
+                <h4>Colores de Iconos:</h4>
+                <ul>
+                    <li><strong>Principal:</strong> #002771 (Azul)</li>
+                    <li><strong>Destacado:</strong> #E02F8E (Magenta)</li>
+                    <li><strong>Optimista:</strong> #FFDE59 (Amarillo)</li>
+                </ul>
+
+                <h4>Categorías de Iconos:</h4>
+                <table>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Uso</th>
+                    </tr>
+                    <tr>
+                        <td> Personas y Comunidad</td>
+                        <td>Voluntariado, equipo, social</td>
+                    </tr>
+                    <tr>
+                        <td> Alimentación</td>
+                        <td>Bancos de alimentos, nutrición</td>
+                    </tr>
+                    <tr>
+                        <td> Vivienda y Refugio</td>
+                        <td>Emergencias, alojamiento</td>
+                    </tr>
+                    <tr>
+                        <td> Educación</td>
+                        <td>Programas educativos, formación</td>
+                    </tr>
+                    <tr>
+                        <td> Salud</td>
+                        <td>Asistencia sanitaria, bienestar</td>
+                    </tr>
+                    <tr>
+                        <td> Justicia Social</td>
+                        <td>Derechos, igualdad</td>
+                    </tr>
+                </table>
+
+                <h3>Fotografía</h3>
+
+                <h4>Estilo Fotográfico:</h4>
+                <ul>
+                    <li><strong>Tipo:</strong> Imágenes reales de proyectos, no stock abstracto</li>
+                    <li><strong>Composición:</strong> Personas en primer plano, acción visible</li>
+                    <li><strong>Luz:</strong> Natural preferentemente, cálida</li>
+                    <li><strong>Emociones:</strong> Expresiones genuinas, no posadas</li>
+                </ul>
+
+                <h4>Tratamiento de Imágenes:</h4>
+                <ul>
+                    <li>Sin filtros excesivos o artificiales</li>
+                    <li>Contraste medio-alto para legibilidad</li>
+                    <li>Saturación natural o ligeramente aumentada</li>
+                    <li>Composición clara y directa</li>
+                </ul>
+
+                <h4>Valores a Transmitir:</h4>
+                <ul>
+                    <li> Cercanía y humanidad</li>
+                    <li> Solidaridad real</li>
+                    <li> Esperanza y futuro positivo</li>
+                    <li> Dignidad de las personas</li>
+                    <li> Acción concreta y visible</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 6: ESTRUCTURA TÉCNICA -->
+            <div class="seccion">
+                <h2>6. Estructura Técnica del Proyecto</h2>
+
+                <h3>Árbol de Archivos del Proyecto</h3>
+
+                <pre>WebHumanitariaDDIW/
+                    ├── index.html                    # Página principal
+                    ├── quienes-somos.html           # Información institucional
+                    ├── proyectos.html               # Proyectos humanitarios
+                    ├── galeria.html                 # Galería de imágenes
+                    ├── contacto.html                # Formulario de contacto
+                    │
+                    ├── css/
+                    │   ├── style.css               # Estilos generales
+                    │   ├── galeria.css             # Estilos de galería
+                    │   └── fuentes.css             # Tipografías personalizadas
+                    │
+                    ├── assets/
+                    │   ├── logo/                   # Logotipos oficiales
+                    │   └── mockups/                # Diseños y prototipos
+                    │
+                    ├── recursos/
+                    │   └── ayuda_españa.txt        # Documentación complementaria
+                    │
+                    └── docs/
+                        ├── README.md               # Documentación principal
+                        ├── GUIA-ESTILOS-KAIROS.md # Guía de estilos completa
+                        └── Documentacion_Completa_Kairos.html # Este documento 
+                </pre>
+
+                <h3>Descripción de Archivos HTML</h3>
+
+                <table>
+                    <tr>
+                        <th>Archivo</th>
+                        <th>Descripción</th>
+                        <th>Propósito</th>
+                    </tr>
+                    <tr>
+                        <td><strong>index.html</strong></td>
+                        <td>Página principal del sitio</td>
+                        <td>Landing page, bienvenida, información general</td>
+                    </tr>
+                    <tr>
+                        <td><strong>quienes-somos.html</strong></td>
+                        <td>Sección institucional</td>
+                        <td>Presentar organización, valores, equipo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>proyectos.html</strong></td>
+                        <td>Descripción de proyectos</td>
+                        <td>Mostrar iniciativas humanitarias activas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>galeria.html</strong></td>
+                        <td>Galería visual</td>
+                        <td>Mostrar trabajo visual de la organización</td>
+                    </tr>
+                    <tr>
+                        <td><strong>contacto.html</strong></td>
+                        <td>Formulario de contacto</td>
+                        <td>Facilitar comunicación con la ONG</td>
+                    </tr>
+                </table>
+
+                <h3>Hojas de Estilo CSS</h3>
+
+                <h4>style.css - Estilos Generales</h4>
+                <ul>
+                    <li>Estilos base y reset</li>
+                    <li>Variables CSS con colores corporativos</li>
+                    <li>Componentes reutilizables</li>
+                    <li>Layout con Flexbox y Grid</li>
+                    <li>Responsive design</li>
+                    <li>Tipografía y jerarquía</li>
+                </ul>
+
+                <h4>galeria.css - Estilos Específicos</h4>
+                <ul>
+                    <li>Estilos avanzados para galería</li>
+                    <li>Efectos hover y transiciones</li>
+                    <li>Background gradientes</li>
+                    <li>Animaciones</li>
+                </ul>
+
+                <h4>fuentes.css - Tipografías</h4>
+                <ul>
+                    <li>Importación de fuentes personalizadas</li>
+                    <li>Definición de @font-face</li>
+                    <li>Todos los pesos de Satoshi</li>
+                    <li>Optimización de carga</li>
+                </ul>
+
+                <h3>Carpeta Assets</h3>
+
+                <h4>logo/</h4>
+                <p>Contiene todas las variantes del logo de Kairós:</p>
+                <ul>
+                    <li>Logo rosa magenta - PNG/SVG</li>
+                    <li>Logo azul oscuro - PNG/SVG</li>
+                    <li>Logo amarillo - PNG/SVG</li>
+                    <li>Variantes con texto</li>
+                    <li>Versiones en alta resolución</li>
+                </ul>
+
+                <h4>mockups/</h4>
+                <p>Diseños y prototipos del proyecto:</p>
+                <ul>
+                    <li>Mockups de páginas</li>
+                    <li>Prototipos de componentes</li>
+                    <li>Diseños de diferentes versiones</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 7: PÁGINAS Y FUNCIONALIDADES -->
+            <div class="seccion">
+                <h2>7. Páginas y Funcionalidades</h2>
+
+                <h3>Página de Inicio (index.html)</h3>
+
+                <h4>Objetivos:</h4>
+                <ul>
+                    <li>Bienvenida a visitantes</li>
+                    <li>Presentación clara de la organización</li>
+                    <li>Call-to-action principal</li>
+                    <li>Información destacada</li>
+                </ul>
+
+                <h4>Secciones:</h4>
+                <ul>
+                    <li><strong>Header:</strong> Navegación principal, logo</li>
+                    <li><strong>Hero Section:</strong> Título principal, descripción, CTA</li>
+                    <li><strong>Sidebar:</strong> Noticias y enlaces externos</li>
+                    <li><strong>Footer:</strong> Información de contacto, copyright</li>
+                </ul>
+
+                <h3>Página Quiénes Somos (quienes-somos.html)</h3>
+
+                <h4>Contenido:</h4>
+                <ul>
+                    <li>Descripción institucional (3 párrafos)</li>
+                    <li>Misión y visión de Kairós</li>
+                    <li>Grid de valores con iconos (4 elementos):</li>
+                    <ul>
+                        <li>Solidaridad</li>
+                        <li>Transparencia</li>
+                        <li>Compromiso</li>
+                        <li>Respeto</li>
+                    </ul>
+                    <li>Galería de equipo (grid 3 columnas con hover effects)</li>
+                </ul>
+
+                <h3>Página Proyectos (proyectos.html)</h3>
+
+                <h4>Proyectos Destacados:</h4>
+
+                <p><strong>1. Banco de Alimentos</strong></p>
+                <p>Recogida y distribución de alimentos para familias necesitadas en distintas regiones de España. Proporciona alimentos básicos de calidad a quienes más lo necesitan.</p>
+
+                <p><strong>2. Apoyo a Refugiados</strong></p>
+                <p>Asistencia legal, social y material a personas refugiadas y migrantes, priorizando el apoyo a mujeres y niños en situaciones vulnerables.</p>
+
+                <p><strong>3. Voluntariado Escolar</strong></p>
+                <p>Programas de refuerzo educativo y actividades lúdicas para niños en riesgo de exclusión social, promoviendo su inclusión social.</p>
+
+                <h4>Diseño de Cards:</h4>
+                <ul>
+                    <li>Flexbox layout responsivo</li>
+                    <li>Imagen de proyecto (200px altura)</li>
+                    <li>Título en H2</li>
+                    <li>Descripción en párrafo</li>
+                    <li>Hover effects con elevation</li>
+                </ul>
+
+                <h3>Página Galería (galeria.html)</h3>
+
+                <h4>Contenido Visual:</h4>
+                <ul>
+                    <li>6 imágenes de proyectos reales</li>
+                    <li>Descripción de trabajo humanitario</li>
+                    <li>Información sobre ayuda proporcionada</li>
+                </ul>
+
+                <h4>Categorías de Ayuda:</h4>
+                <ul>
+                    <li> Alimentos y nutrición</li>
+                    <li> Refugio y asistencia</li>
+                    <li> Agua y saneamiento</li>
+                    <li> Protección</li>
+                    <li> Atención sanitaria</li>
+                    <li> Educación en emergencias</li>
+                </ul>
+
+                <h4>Características Especiales:</h4>
+                <ul>
+                    <li>Background gradiente azul (valores corporativos)</li>
+                    <li>Backdrop filter blur para profundidad</li>
+                    <li>Transiciones suaves en imágenes</li>
+                    <li>Texto explicativo sobre ayuda humanitaria UE</li>
+                </ul>
+
+                <h3>Página Contacto (contacto.html)</h3>
+
+                <h4>Formulario:</h4>
+                <table>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Tipo</th>
+                        <th>Requerido</th>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Text</td>
+                        <td>Sí</td>
+                    </tr>
+                    <tr>
+                        <td>Apellidos</td>
+                        <td>Text</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>Email</td>
+                        <td>Sí</td>
+                    </tr>
+                    <tr>
+                        <td>Mensaje</td>
+                        <td>Textarea</td>
+                        <td>Sí</td>
+                    </tr>
+                </table>
+
+                <h4>Características de Diseño:</h4>
+                <ul>
+                    <li>Fondo: Imagen humanitaria con overlay</li>
+                    <li>Overlay semi-transparente (50% opacidad)</li>
+                    <li>Formulario con z-index elevado</li>
+                    <li>Inputs con transparencia</li>
+                    <li>Botón principal en color corporativo</li>
+                </ul>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 8: GUÍA DE IMPLEMENTACIÓN -->
+            <div class="seccion">
+                <h2>8. Guía de Implementación</h2>
+
+                <h3>Requisitos Previos</h3>
+                <ul>
+                    <li>Navegador web moderno (Chrome, Firefox, Safari, Edge)</li>
+                    <li>Editor de código (VS Code recomendado)</li>
+                    <li>Servidor local (opcional: Live Server, Python, XAMPP)</li>
+                </ul>
+
+                <h3>Opciones de Instalación</h3>
+
+                <h4>Opción 1: VS Code con Live Server</h4>
+                <ol>
+                    <li>Instalar Visual Studio Code</li>
+                    <li>Instalar extensión "Live Server"</li>
+                    <li>Abrir carpeta del proyecto</li>
+                    <li>Click derecho en index.html</li>
+                    <li>Seleccionar "Open with Live Server"</li>
+                </ol>
+
+                <h4>Opción 2: Abrir Directamente</h4>
+                <ol>
+                    <li>Navegar a carpeta del proyecto</li>
+                    <li>Doble click en index.html</li>
+                    <li>El navegador abrirá el sitio automáticamente</li>
+                </ol>
+
+                <h4>Opción 3: Servidor Python</h4>
+                <pre>cd WebHumanitariaDDIW
+                    python -m http.server 8000
+
+                    # Abrir en navegador:
+                    # http://localhost:8000
+                </pre>
+
+                <h3>Configuración Inicial</h3>
+
+                <h4>1. Tipografías Personalizadas</h4>
+                <ul>
+                    <li>Crear carpeta fonts/ en raíz del proyecto</li>
+                    <li>Copiar archivos de familia Satoshi</li>
+                    <li>Verificar rutas en fuentes.css</li>
+                    <li>Instalar tipografía Chillax para logotipo</li>
+                </ul>
+
+                <h4>2. Logo de Kairós</h4>
+                <ul>
+                    <li>Crear carpeta assets/logo/</li>
+                    <li>Descargar logos en sus tres variantes</li>
+                    <li>Actualizar src en todos los HTML</li>
+                    <li>Proporcionar en PNG y SVG</li>
+                </ul>
+
+                <h4>3. Imágenes Locales</h4>
+                <ul>
+                    <li>Crear carpeta img/ en raíz</li>
+                    <li>Descargar imágenes externas</li>
+                    <li>Optimizar para web (WebP recomendado)</li>
+                    <li>Actualizar rutas en HTML</li>
+                </ul>
+
+                <h3>Responsive Design - Breakpoints</h3>
+
+                <pre>/* Desktop (por defecto) */
+                    @media (min-width: 801px) { }
+
+                    /* Tablet */
+                    @media (max-width: 800px) {
+                    .header-container { flex-direction: column; }
+                    .valores-container { grid-template-columns: repeat(2, 1fr); }
+                    }
+
+                    /* Mobile */
+                    @media (max-width: 480px) {
+                    .valores-container { grid-template-columns: 1fr; }
+                    }
+                </pre>
+
+                <h3>Testing y Validación</h3>
+
+                <div class="checklist">
+                    <li>Validar HTML con W3C Validator</li>
+                    <li>Validar CSS con W3C CSS Validator</li>
+                    <li>Testear en navegadores principales</li>
+                    <li>Verificar responsive en móviles</li>
+                    <li>Revisar accesibilidad (WCAG AA)</li>
+                    <li>Comprobar velocidad de carga</li>
+                    <li>Revisar enlaces (sin broken links)</li>
+                </div>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 9: MANTENIMIENTO -->
+            <div class="seccion">
+                <h2>9. Guía de Mantenimiento</h2>
+
+                <h3>Actualización de Contenido</h3>
+
+                <h4>Añadir Nuevo Proyecto</h4>
+                <ol>
+                    <li>Abrir proyectos.html</li>
+                    <li>Duplicar estructura article.proyecto-card</li>
+                    <li>Actualizar:
+                        <ul>
+                            <li>Título (H2)</li>
+                            <li>Descripción (P)</li>
+                            <li>Imagen (IMG src y alt)</li>
+                        </ul>
+                    </li>
+                    <li>Guardar y probar en navegador</li>
+                </ol>
+
+                <h4>Modificar Valores</h4>
+                <ol>
+                    <li>Abrir quienes-somos.html</li>
+                    <li>Localizar .valores-container</li>
+                    <li>Editar .valor-item:
+                        <ul>
+                            <li>Imagen del ícono</li>
+                            <li>Texto del valor</li>
+                        </ul>
+                    </li>
+                    <li>Mantener estructura de 4 columnas</li>
+                </ol>
+
+                <h4>Actualizar Galería</h4>
+                <ol>
+                    <li>Abrir galeria.html</li>
+                    <li>En .galeria, añadir/modificar img tags</li>
+                    <li>Mantener 6 imágenes para balance visual</li>
+                </ol>
+
+                <h3>Cambios de Estilo</h3>
+
+                <h4>Modificar Colores Corporativos</h4>
+                <pre>/* En css/style.css */
+                    :root {
+                    --color-primary: #002771;        /* Azul oficial */
+                    --color-accent-magenta: #E02F8E; /* Rosa oficial */
+                    --color-accent-yellow: #FFDE59;  /* Amarillo oficial */
+                    }
+                </pre>
+
+                <h4>Ajustar Tipografía</h4>
+                <pre>body {
+                    font-family: 'Satoshi-Regular', 'Segoe UI', Arial, sans-serif;
+                    font-size: 16px;
+                    line-height: 1.8;
+                    }
+
+                    h1, h2, h3 {
+                    color: #002771;
+                    font-weight: 700;
+                    }
+                </pre>
+
+                <h3>SEO y Accesibilidad</h3>
+
+                <h4>Meta Tags</h4>
+                <pre>&lt;head&gt;
+                    &lt;title&gt;Kairós - ONG Humanitaria&lt;/title&gt;
+                    &lt;meta name="description" content="..."&gt;
+                    &lt;meta name="keywords" content="ONG, humanitaria..."&gt;
+                    &lt;meta name="og:title" content="..."&gt;
+                    &lt;meta name="og:description" content="..."&gt;
+                    &lt;/head&gt;
+                </pre>
+
+                <h4>Accesibilidad</h4>
+                <div class="checklist">
+                    <li>Verificar contraste WCAG AA (4.5:1)</li>
+                    <li>Añadir alt text descriptivo en imágenes</li>
+                    <li>Usar headings en orden jerárquico</li>
+                    <li>Asegurar navegación por teclado</li>
+                    <li>Testear con lectores de pantalla</li>
+                    <li>Usar aria-labels donde necesario</li>
+                </div>
+
+            </div>
+
+            <div class="salto-pagina"></div>
+
+            <!-- SECCIÓN 10: ROLES DEL EQUIPO -->
+            <div class="seccion">
+                <h2>10. Roles del Equipo y Metodología</h2>
+
+                <h3>Estructura de Equipo Recomendada</h3>
+
+                <h4>1. Coordinador/a de Proyecto</h4>
+                <p><strong>Responsabilidades principales:</strong></p>
+                <ul>
+                    <li>Supervisión general del proyecto</li>
+                    <li>Coordinación entre equipos</li>
+                    <li>Gestión de plazos y entregas</li>
+                    <li>Resolución de conflictos</li>
+                    <li>Comunicación con stakeholders</li>
+                </ul>
+
+                <p><strong>Habilidades requeridas:</strong></p>
+                <ul>
+                    <li>Liderazgo efectivo</li>
+                    <li>Gestión de proyectos</li>
+                    <li>Comunicación clara</li>
+                    <li>Resolución de problemas</li>
+                </ul>
+
+                <h4>2. Responsable de Diseño</h4>
+                <p><strong>Responsabilidades principales:</strong></p>
+                <ul>
+                    <li>Definir identidad visual</li>
+                    <li>Crear mockups y prototipos</li>
+                    <li>Seleccionar paleta de colores</li>
+                    <li>Diseñar componentes UI</li>
+                    <li>Asegurar consistencia visual</li>
+                </ul>
+
+                <p><strong>Habilidades requeridas:</strong></p>
+                <ul>
+                    <li>Diseño UI/UX</li>
+                    <li>Herramientas: Figma, Adobe XD</li>
+                    <li>Conocimientos de CSS</li>
+                    <li>Psicología del color</li>
+                </ul>
+
+                <h4>3. Desarrollador/a Frontend</h4>
+                <p><strong>Responsabilidades principales:</strong></p>
+                <ul>
+                    <li>Implementar HTML/CSS</li>
+                    <li>Crear layouts responsivos</li>
+                    <li>Optimizar rendimiento</li>
+                    <li>Cross-browser testing</li>
+                    <li>Documentar código</li>
+                </ul>
+
+                <p><strong>Habilidades requeridas:</strong></p>
+                <ul>
+                    <li>HTML5, CSS3</li>
+                    <li>Flexbox y Grid</li>
+                    <li>Responsive design</li>
+                    <li>Git/GitHub</li>
+                    <li>JavaScript básico</li>
+                </ul>
+
+                <h4>4. Investigador/a de Contenidos</h4>
+                <p><strong>Responsabilidades principales:</strong></p>
+                <ul>
+                    <li>Investigar información humanitaria</li>
+                    <li>Redactar textos institucionales</li>
+                    <li>Seleccionar imágenes apropiadas</li>
+                    <li>Verificar fuentes y datos</li>
+                    <li>Optimizar para SEO</li>
+                </ul>
+
+                <p><strong>Habilidades requeridas:</strong></p>
+                <ul>
+                    <li>Redacción profesional</li>
+                    <li>Investigación</li>
+                    <li>Conocimientos ONG/humanitario</li>
+                    <li>SEO básico</li>
+                </ul>
+
+                <h4>5. Revisor/a de Calidad (QA)</h4>
+                <p><strong>Responsabilidades principales:</strong></p>
+                <ul>
+                    <li>Testing funcional</li>
+                    <li>Verificar responsive</li>
+                    <li>Control de calidad de contenido</li>
+                    <li>Detectar errores</li>
+                    <li>Documentar issues</li>
+                </ul>
+
+                <p><strong>Habilidades requeridas:</strong></p>
+                <ul>
+                    <li>Atención al detalle</li>
+                    <li>Testing manual</li>
+                    <li>Documentación técnica</li>
+                    <li>Navegadores múltiples</li>
+                </ul>
+
+                <h3>Metodología de Trabajo</h3>
+
+                <h4>Fases del Proyecto</h4>
+                <ol>
+                    <li><strong>Planificación:</strong> Definir alcance, timeline, equipo</li>
+                    <li><strong>Diseño:</strong> Crear mockups, paleta de colores, guía de estilos</li>
+                    <li><strong>Desarrollo:</strong> Implementar HTML/CSS, responsive design</li>
+                    <li><strong>Contenido:</strong> Escribir, recopilar imágenes, optimizar</li>
+                    <li><strong>Testing:</strong> QA, validación, optimización</li>
+                    <li><strong>Lanzamiento:</strong> Deploy, monitoreo inicial</li>
+                    <li><strong>Mantenimiento:</strong> Actualizaciones, mejoras</li>
+                </ol>
+
+                <h4>Comunicación y Reuniones</h4>
+                <ul>
+                    <li><strong>Kick-off:</strong> Presentación de proyecto y objetivos</li>
+                    <li><strong>Semanales:</strong> Revisión de progreso</li>
+                    <li><strong>Diseño:</strong> Aprobación de mockups</li>
+                    <li><strong>Pre-lanzamiento:</strong> Revisión final</li>
+                </ul>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
